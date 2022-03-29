@@ -12,11 +12,6 @@ const SerializadorErro = require('./Serializador').SerializadorErro
 app.use(bodyParser.json())
 
 app.use((requisicao, resposta, proximo) => {
-    resposta.set('X-Powered-By', 'Gatito Petshop')
-    proximo()
-  })
-
-app.use((requisicao, resposta, proximo) => {
     let formatoRequisitado = requisicao.header('Accept')
 
     if (formatoRequisitado === '*/*') {
